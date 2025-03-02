@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Record Inspector - Dynamics CRM Toolkit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container full-page">
+    <header>
+      <h1>Dynamics CRM Record Inspector</h1>
+      <div id="record-info" class="record-info">
+        <span id="entity-name"></span>
+        <span id="record-id"></span>
+      </div>
+    </header>
+    
+    <main>
+      <div id="status-bar" class="status-bar">
+        <span id="status-message">Loading record data...</span>
+      </div>
+      
+      <div class="filter-section">
+        <input type="text" id="field-filter" placeholder="Filter fields..." class="filter-input">
+        <div class="filter-options">
+          <label>
+            <input type="checkbox" id="show-null" checked>
+            Show null values
+          </label>
+          <label>
+            <input type="checkbox" id="show-system" checked>
+            Show system fields
+          </label>
+        </div>
+      </div>
+      
+      <div class="results-table-container">
+        <table id="fields-table" class="results-table">
+          <thead>
+            <tr>
+              <th>Display Name</th>
+              <th>Schema Name</th>
+              <th>Value</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody id="fields-body"></tbody>
+        </table>
+      </div>
+    </main>
+    
+    <footer>
+      <button id="export-btn" class="secondary-btn">Export to CSV</button>
+      <button id="back-btn" class="secondary-btn">Back to Toolkit</button>
+    </footer>
+  </div>
+  
+  <script src="record-inspector.js"></script>
+</body>
+</html> 

@@ -1,0 +1,280 @@
+/* Base styles */
+:root {
+  --primary-color: #0078d4;
+  --secondary-color: #106ebe;
+  --background-color: #f8f8f8;
+  --text-color: #333;
+  --border-color: #ddd;
+  --success-color: #107c10;
+  --error-color: #d13438;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 800px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+/* Header */
+header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Main content */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+/* Query section */
+.query-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#sql-query {
+  width: 100%;
+  height: 120px;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  resize: vertical;
+}
+
+.query-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Status bar */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Results section */
+.results-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results-table-container {
+  overflow-x: auto;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table th,
+.results-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.results-table th {
+  background-color: #f0f0f0;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+}
+
+.results-table th:hover {
+  background-color: #e0e0e0;
+}
+
+.results-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.results-table tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Footer */
+footer {
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Buttons */
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.secondary-btn {
+  background-color: #f0f0f0;
+  color: var(--text-color);
+}
+
+.secondary-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.pagination-btn {
+  padding: 4px 8px;
+  background-color: #f0f0f0;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 4px;
+  cursor: pointer;
+}
+
+/* Utility classes */
+.hidden {
+  display: none;
+}
+
+.error {
+  color: var(--error-color);
+}
+
+.success {
+  color: var(--success-color);
+}
+
+/* Add these styles to your existing CSS */
+
+.popup-container {
+  width: 350px;
+  min-height: 300px;
+}
+
+.popup-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tool-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tool-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.tool-btn:hover:not(:disabled) {
+  background-color: #f0f7ff;
+  border-color: var(--primary-color);
+}
+
+.tool-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tool-btn .icon {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.tool-btn .label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.tool-btn .description {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.quick-query {
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+}
+
+.quick-query textarea {
+  height: 80px;
+} 
