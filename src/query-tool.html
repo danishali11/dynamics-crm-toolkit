@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Query Tool - Dynamics CRM Toolkit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container full-page">
+    <header>
+      <h1>Dynamics CRM SQL Query Tool</h1>
+    </header>
+    
+    <main>
+      <div class="query-section">
+        <textarea id="sql-query" placeholder="Enter your SQL query here...
+Example: SELECT name, accountid FROM account WHERE revenue > 1000000 ORDER BY name LIMIT 10"></textarea>
+        <div class="query-actions">
+          <button id="execute-btn" class="primary-btn">Execute Query</button>
+          <button id="clear-btn" class="secondary-btn">Clear</button>
+        </div>
+      </div>
+      
+      <div id="status-bar" class="status-bar">
+        <span id="status-message">Ready</span>
+        <span id="execution-time"></span>
+        <span id="record-count"></span>
+      </div>
+      
+      <div id="results-section" class="results-section hidden">
+        <div class="results-header">
+          <h2>Results</h2>
+          <button id="export-btn" class="secondary-btn">Export to CSV</button>
+        </div>
+        
+        <div class="results-table-container">
+          <table id="results-table" class="results-table">
+            <thead id="results-header"></thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+        
+        <div id="pagination" class="pagination">
+          <button id="prev-page" class="pagination-btn" disabled>Previous</button>
+          <span id="page-info">Page 1 of 1</span>
+          <button id="next-page" class="pagination-btn" disabled>Next</button>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <button id="back-btn" class="secondary-btn">Back to Toolkit</button>
+    </footer>
+  </div>
+  
+  <script src="query-tool.js"></script>
+</body>
+</html> 

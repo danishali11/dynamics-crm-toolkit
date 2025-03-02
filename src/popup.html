@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamics CRM Toolkit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container popup-container">
+    <header>
+      <h1>Dynamics CRM Toolkit</h1>
+    </header>
+    
+    <main class="popup-main">
+      <div class="tool-buttons">
+        <button id="open-query-tool" class="tool-btn">
+          <span class="icon">🔍</span>
+          <span class="label">SQL Query Tool</span>
+          <span class="description">Query Dynamics data using SQL-like syntax</span>
+        </button>
+        
+        <button id="view-all-fields" class="tool-btn" disabled>
+          <span class="icon">📋</span>
+          <span class="label">View All Fields</span>
+          <span class="description">See all fields for the current record</span>
+        </button>
+      </div>
+      
+      <div class="quick-query">
+        <textarea id="sql-query" placeholder="Quick query: SELECT name, accountid FROM account LIMIT 10"></textarea>
+        <div class="query-actions">
+          <button id="execute-btn" class="primary-btn">Execute</button>
+          <button id="clear-btn" class="secondary-btn">Clear</button>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <span id="status-message">Ready</span>
+      <button id="settings-btn" class="icon-btn">⚙️</button>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 
